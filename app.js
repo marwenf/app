@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
+var port = process.env.PORT || 8080
 
 
 //config app
@@ -17,6 +18,6 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(require('./router'));
 
 //start app
-app.listen(1337, function() {
-	console.log('listening on port 1337');
+app.listen(port, function() {
+	console.log('listening on port ' + port);
 });
